@@ -1,0 +1,14 @@
+[
+    {
+        "firstName": "Noah",
+        "lastName": "Santos",
+        "gender": "male",
+        "vote": "Nixon"
+    },
+    {
+        "firstName": "Josh",
+        "lastName": "Ballecer",
+        "gender": "male",
+        "vote": "McGovern"
+    }
+]
