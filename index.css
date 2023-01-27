@@ -6,7 +6,7 @@ html, body{
 *{
     margin: 0;
     padding: 0;
-    font-size: 125%;
+    color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 /* creates flexbox for the two people */
@@ -49,7 +49,7 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 350%;
+    font-size: 300%;
     color: white;
 }
 /* modifies the title */
@@ -66,7 +66,7 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 400%;
+    font-size: 375%;
     color: white;
 }
 
@@ -80,7 +80,32 @@ html, body{
 }
 
 /* resizes images */
-image{
-    width: 100%;
-    height: 100%;
+img{
+    width: 50%;
+    height: auto;
 }
+/* changes button font size */
+button{
+    font-size: 150%;
+    color: black;
+}
+
+/* changes cursor to show mcgovern is not the right vote */
+#wrong{
+    cursor: not-allowed;
+}
+/* moves the button to front of the page */
+#moves{
+    z-index: 4;
+    background-color: royalblue;
+}
+
+/* resizes text */
+@media (max-width: 400px) {
+    #title{
+        font-size: 350%;
+    }
+    #context{
+        font-size: 300%;
+    }
+  }
