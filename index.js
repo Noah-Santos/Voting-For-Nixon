@@ -13,6 +13,7 @@ function loaded(){
         if(i == 1){
             // id of vote button
             button.setAttribute("id", "correct");
+            // add event listener to say when nixon won
             button.addEventListener("click", win)
             content1.appendChild(img);
             content1.appendChild(button);
@@ -28,7 +29,7 @@ function loaded(){
     }
 }
 
-// function to say nixon won when his vote button is clicked
+// function to say nixon won when his vote button is clicked and changes back to vote after 2 seconds
 function win(){
     title.innerHTML = "Nixon Wins!";
     title.style.fontSize = "600%";
@@ -72,6 +73,7 @@ function really(){
     let no = document.createElement("button");
     no.innerHTML = "No";
     content2.appendChild(no);
+    // adds event listener for when they click no
     no.addEventListener("click", good);
 }
 
@@ -108,7 +110,7 @@ function good(){
 // creates the vote for nixon at the bottom of the page
 document.addEventListener("contextmenu", display);
 
-// sets the vote for nixon visible
+// sets the vote for nixon visible and hides it when user clicks
 function display(){
     document.getElementById("context").style.visibility = "visible";
     document.addEventListener("click", hide);
