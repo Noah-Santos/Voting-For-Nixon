@@ -1,7 +1,6 @@
 
 // when page loads, creates and adds elements to each div
 function loaded(){
-//  alert("Vote for Nixon");
     // loops to create obth images and vote buttons
     for(let i = 1; i < 3; i++){
         // creates images
@@ -14,6 +13,7 @@ function loaded(){
         if(i == 1){
             // id of vote button
             button.setAttribute("id", "correct");
+            button.addEventListener("click", win)
             content1.appendChild(img);
             content1.appendChild(button);
         }else{
@@ -26,6 +26,14 @@ function loaded(){
         }
         
     }
+}
+
+// function to say nixon won when his vote button is clicked
+function win(){
+    title.innerHTML = "Nixon Wins!";
+    title.style.fontSize = "600%";
+    title.style.fontWeight = "bold"
+    setInterval(function(){title.innerHTML = "Vote";}, 2000);
 }
 
 // event listener to when user moves mouse over nixon's side
@@ -94,7 +102,7 @@ function good(){
     let goodText = document.createElement("h3");
     goodText.innerHTML = "Good Choice";
     content2.appendChild(goodText);
-    setInterval(function() {goodText.remove()}, 1500);
+    setInterval(function() {goodText.remove();}, 1500);
 }
 
 // creates the vote for nixon at the bottom of the page
@@ -110,17 +118,3 @@ function display(){
 function hide(){
     document.getElementById("context").style.visibility = "hidden";
 }
-
-// makes the nixon text visible for 2 seconds
-// let show, clear;
-// function displayText(){
-//     show = clear = "";
-//     show = setInterval(display, 500);
-//     clear = setInterval(hide, 2000);
-//     setInterval(stop, 2000);
-// }
-
-// function stop(){
-//     clearInterval(show);
-//     clearInterval(clear);
-// }

@@ -54,7 +54,7 @@ html, body{
 }
 /* modifies the title */
 #title {
-    /* sets hte position */
+    /* sets the position */
     position: fixed;
     top: 5%;
     left: 25%;
