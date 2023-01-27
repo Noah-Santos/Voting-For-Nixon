@@ -1,55 +1,32 @@
-// function loaded(){
-//     alert("Vote for Nixon");
-// }
 
-// grabs the fs modules
-const fs = require("fs");
-const { arrayBuffer } = require("stream/consumers");
-
-// create simple test object
-let testing = {
-    name: "test",
-    breed:"test",
-    color:"test"
-}
-let testing2 = {
-    name: "test2",
-    breed:"test2",
-    color:"test2"
-}
-let testing3 = {
-    name: "test3",
-    breed:"test3",
-    color:"test3"
-}
-let array = [];
-array.push(testing)
-array.push(testing2)
-array.push(testing3)
-// converts the objects to json format and adds to the array
-function add(data){
-    // passes the object parameter into a json format
-    let temp = JSON.stringify(data)
-}
-add(array)
-console.log(array)
-// convert(array)
-
-function convert(test){
-    
-    // sees if there is an error
-    function finished(error){
-        if(error){
-            console.error(error);
-            return
-        }
+// when page loads, creates and adds elements to each div
+function loaded(){
+//  alert("Vote for Nixon");
+    for(let i = 0; i < 3; i++){
+        let temp = document.createElement("img")
+        temp.src = "i.jpg"
     }
-    // loops through array and pushes the json format obejct into the json file
-    // first parameter determiens which json file the data will be sent to
-    // second parameter determines what data is going to be sent
-    // third parameter prevents the data from being saved if there is an error
-    for(let i = 0; i < test.length; i++){
-        fs.writeFile("data.json", test[i], finished)
-    }
-    
+}
+// creates the vote for nixon at the bottom of the page
+document.addEventListener("contextmenu", displayText);
+
+// sets the vote for nixon visible
+function display(){
+    document.getElementById("context").style.visibility = "visible";
+}
+// sets the vote for nixon invisible
+function hide(){
+    document.getElementById("context").style.visibility = "hidden";
+}
+// makes the nixon text visible for 4 seconds
+let show, clear;
+function displayText(){
+    show = setInterval(display, 1000);
+    clear = setInterval(hide, 5000);
+    setInterval(stop, 5000);
+}
+
+function stop(){
+    clearInterval(show);
+    clearInterval(clear);
 }

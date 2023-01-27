@@ -1,0 +1,58 @@
+/* sets height to the bottom of the page */
+html, body{
+    height: 100%;
+}
+/* sets margin and padding and 0 */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* creates flexbox for the two people */
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+/* creates nixon's side */
+.nixon{
+    background-color: red;
+    height: 100%;
+    width: 50%;
+}
+/* creates mcgovern's side */
+.mcgovern{
+    background-color: blue;
+    height: 100%;
+    width: 50%;
+}
+/* creates box for context menu */
+#context{
+    visibility: hidden;
+    /* positions the element */
+    position: fixed;
+    top: 85%;
+    left: 25%;
+    background-color: green;
+    /* sets width and height of div and puts it on top of everythin else */
+    width: 50vw;
+    height: 10vh;
+    z-index: 1;
+}
+/* modifies the title */
+#title {
+    /* sets hte position */
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    /* sets width and puts it on top of everything else */
+    width: 50vw;
+    height: 10vh;
+    z-index: 1;
+    /* centers text and modifies the format */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 300%;
+    color: white;
+}
