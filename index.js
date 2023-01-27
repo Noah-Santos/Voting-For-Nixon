@@ -28,12 +28,13 @@ function display(){
 function hide(){
     document.getElementById("context").style.visibility = "hidden";
 }
-// makes the nixon text visible for 4 seconds
+// makes the nixon text visible for 2 seconds
 let show, clear;
 function displayText(){
-    show = setInterval(display, 1000);
-    clear = setInterval(hide, 5000);
-    setInterval(stop, 5000);
+    show = clear = "";
+    show = setInterval(display, 500);
+    clear = setInterval(hide, 2000);
+    setInterval(stop, 2000);
 }
 
 function stop(){
