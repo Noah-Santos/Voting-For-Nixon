@@ -20,7 +20,7 @@ function loaded(){
             // sets the cursor to wrong when they hover over mcgovern
             button.setAttribute("id", "wrong");
             // creates event listener to ask them if they really want to vote for mcgovern
-            // button.addEventListener("click", really);
+            button.addEventListener("click", really);
             content2.appendChild(img);
             content2.appendChild(button);
         }
@@ -43,40 +43,75 @@ function voteButton(e){
 
 }
 
-
-
 // function to ask
 function really(){
     // creates text and buttons to verify their decision to vote
     this.style.visibility = "hidden"
     let text = document.createElement("h2");
     text.innerHTML = "Do you really want to vote for McGovern?";
+    // sets id of the text
+    text.setAttribute("id", "question")
+    content2.appendChild(text);
     let yes = document.createElement("button");
     yes.innerHTML = "Yes"
     // sets the id to moves
     yes.setAttribute("id", "moves");
+    // hides yes button on hover
+    yes.addEventListener("mouseover", gone);
+    // event listener to make button appear again whjen not hovering on it
+    yes.addEventListener("mouseout", back);
+    content2.appendChild(yes);
     let no = document.createElement("button");
     no.innerHTML = "No";
-    content2.appendChild(text);
-    content2.appendChild(yes);
     content2.appendChild(no);
+    no.addEventListener("click", good);
 }
 
-// // creates the vote for nixon at the bottom of the page
-// document.addEventListener("mousemove", display);
+// hides the button on hover
+function gone(){
+    this.style.visibility = "hidden";
+    this.style.disables = "true";
+}
 
-// // sets the vote for nixon visible
-// function display(){
-//     document.getElementById("context").style.visibility = "visible";
-//     document.addEventListener("mousemove", hide);
-// }
+// makes yes button visible again
+function back(){
+    this.style.visibility = "visible";
+}
 
-// // sets the vote for nixon invisible
-// function hide(){
-//     document.getElementById("context").style.visibility = "hidden";
-// }
+// resets the buttons back to vote and tells the user good job
+function good(){
+    // removes eventListeners
+    this.removeEventListener("click", good);
+    moves.removeEventListener("mouseover", gone);
+    moves.removeEventListener("mouseout", back);
+    // removes the buttons and text
+    this.remove();
+    moves.remove();
+    question.remove();
+    // makes old vote button visible again
+    wrong.style.visibility = "visible";
+    // creates a text that says good choice and disappears after 1.5 seconds
+    let goodText = document.createElement("h3");
+    goodText.innerHTML = "Good Choice";
+    content2.appendChild(goodText);
+    setInterval(function() {goodText.remove()}, 1500);
+}
 
-// // makes the nixon text visible for 2 seconds
+// creates the vote for nixon at the bottom of the page
+document.addEventListener("contextmenu", display);
+
+// sets the vote for nixon visible
+function display(){
+    document.getElementById("context").style.visibility = "visible";
+    document.addEventListener("click", hide);
+}
+
+// sets the vote for nixon invisible
+function hide(){
+    document.getElementById("context").style.visibility = "hidden";
+}
+
+// makes the nixon text visible for 2 seconds
 // let show, clear;
 // function displayText(){
 //     show = clear = "";

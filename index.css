@@ -49,7 +49,7 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 300%;
+    font-size: 250%;
     color: white;
 }
 /* modifies the title */
@@ -66,7 +66,7 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 375%;
+    font-size: 300%;
     color: white;
 }
 
@@ -101,7 +101,6 @@ button{
 }
 /* moves the button to front of the page */
 #moves{
-    z-index: 4;
     background-color: royalblue;
 }
 
