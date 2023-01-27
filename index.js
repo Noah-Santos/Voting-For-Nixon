@@ -20,7 +20,7 @@ function loaded(){
             // sets the cursor to wrong when they hover over mcgovern
             button.setAttribute("id", "wrong");
             // creates event listener to ask them if they really want to vote for mcgovern
-            button.addEventListener("click", really);
+            // button.addEventListener("click", really);
             content2.appendChild(img);
             content2.appendChild(button);
         }
@@ -29,13 +29,15 @@ function loaded(){
 }
 
 // event listener to when user moves mouse over nixon's side
-section1.addEventListener("mousemove", voteButton);
+document.addEventListener("mousemove", voteButton);
+// remove event listener on mcgovern's side
+section2.removeEventListener("mousemove", voteButton);
 
 // function to move vote button to user cursor
 function voteButton(e){
     // sets position to the client x and y positon
-    correct.style.position = "absolute";
-    correct.style.left = e.clientX+"px";
+    correct.style.position = "fixed";
+    if(e.clientX < (screen.width/2) - correct.offsetWidth)correct.style.left = e.clientX+"px";
     correct.style.top = e.clientY+"px";
     // console.log(e.clientX)
 

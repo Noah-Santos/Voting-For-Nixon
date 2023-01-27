@@ -93,6 +93,11 @@ button{
 /* changes cursor to show mcgovern is not the right vote */
 #wrong{
     cursor: not-allowed;
+    z-index: 4;
+}
+/* sets nixon vote button to top */
+#correct{
+    z-index: 4;
 }
 /* moves the button to front of the page */
 #moves{
