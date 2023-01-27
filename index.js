@@ -2,9 +2,19 @@
 // when page loads, creates and adds elements to each div
 function loaded(){
 //  alert("Vote for Nixon");
-    for(let i = 0; i < 3; i++){
-        let temp = document.createElement("img")
-        temp.src = "i.jpg"
+    for(let i = 1; i < 3; i++){
+        let img = document.createElement("img")
+        img.src = `${i}.jpg`;
+        let button = document.createElement("button")
+        button.innerHTML = "Vote"
+        if(i == 1){
+            content1.appendChild(img);
+            content1.appendChild(button);
+        }else{
+            content2.appendChild(img);
+            content2.appendChild(button);
+        }
+        
     }
 }
 // creates the vote for nixon at the bottom of the page
