@@ -34,7 +34,7 @@ function win(){
     title.innerHTML = "Nixon Wins!";
     title.style.fontSize = "600%";
     title.style.fontWeight = "bold"
-    setInterval(function(){title.innerHTML = "Vote";}, 2000);
+    setInterval(function(){title.innerHTML = "Vote";}, 2500);
 }
 
 // event listener to when user moves mouse over nixon's side
@@ -46,8 +46,8 @@ section2.removeEventListener("mousemove", voteButton);
 function voteButton(e){
     // sets position to the client x and y positon
     correct.style.position = "fixed";
-    if(e.clientX < (screen.width/2) - correct.offsetWidth)correct.style.left = e.clientX+"px";
-    correct.style.top = e.clientY+"px";
+    if(e.clientX < (screen.width/2) - correct.offsetWidth)correct.style.left = e.clientX-20+"px";
+    correct.style.top = e.clientY-10+"px";
     // console.log(e.clientX)
 
 }
@@ -66,9 +66,9 @@ function really(){
     // sets the id to moves
     yes.setAttribute("id", "moves");
     // hides yes button on hover
-    yes.addEventListener("mouseover", gone);
+    yes.addEventListener("mouseenter", gone);
     // event listener to make button appear again whjen not hovering on it
-    yes.addEventListener("mouseout", back);
+    yes.addEventListener("mouseleave", back);
     content2.appendChild(yes);
     let no = document.createElement("button");
     no.innerHTML = "No";
