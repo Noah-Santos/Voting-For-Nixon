@@ -106,6 +106,7 @@ button{
 /* sets nixon vote button to top */
 #correct{
     z-index: 4;
+    /* cursor: url(eagle.webp), auto; */
 }
 
 /* moves the button to front of the page */
